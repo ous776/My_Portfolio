@@ -71,7 +71,6 @@ h6 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
   overflow-y: auto;
 }
 
@@ -105,7 +104,7 @@ h6 {
   color: #fff;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 2px;
   border-radius: 50%;
   text-align: center;
   width: 36px;
@@ -136,65 +135,6 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Desktop Navigation */
-.nav-menu {
-  padding: 15px 50px;
-}
-
-.nav-menu * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-}
-
-.nav-menu>ul>li {
-  position: relative;
-  white-space: nowrap;
-
-}
-
-.nav-menu a,
-.nav-menu a:focus {
-  display: flex;
-  align-items: center;
-  color: #a8a9b4;
-  padding: 10px 40px;
-  margin-bottom: 8px;
-  transition: 0.3s;
-  font-size: 15px;
-}
-
-
-.nav-menu a:hover {
-
-  color: #a8a9b4;
-  background-color: darkslategrey;
-  border-radius: 2px;
-
-}
-
-.nav-menu a i,
-.nav-menu a:focus i {
-  font-size: 24px;
-  padding-right: 8px;
-  color: #6f7180;
-}
-
-
-.nav-menu .active,
-.nav-menu .active:focus {
-  text-decoration: none;
-  color: #fff;
-  background-color: rgb(38, 231, 231);
-}
-
-.nav-menu a:hover i,
-.nav-menu .active i,
-.nav-menu .active:focus i,
-.nav-menu li:hover>a i {
-  color: #149ddd;
-}
 
 /* Mobile Navigation */
 .mobile-nav-toggle {
@@ -343,39 +283,7 @@ section {
 /*--------------------------------------------------------------
 # Akills
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
 
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
-}
 
 /*--------------------------------------------------------------
 # Resume
@@ -629,12 +537,6 @@ section {
 }
 
 
-
-
-
-
-
-
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -733,5 +635,357 @@ section {
     position: static;
     width: auto;
     padding-right: 20px 15px;
+  }
+}
+
+.skills-section {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.animated-header {
+  font-size: 3em;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.animated-header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -10px;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+  animation: underline 2s infinite alternate;
+}
+
+@keyframes underline {
+  0% {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  100% {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.skill-category {
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.frontend {
+  background-color: #e6f7ff;
+}
+
+.backend {
+  background-color: #fff0f5;
+}
+
+.other {
+  background-color: #f0fff0;
+}
+
+.skill-category h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skill-circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.skill-level {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.frontend .skill-circle:hover {
+  background-color: #b3e0ff;
+}
+
+.backend .skill-circle:hover {
+  background-color: #ffd1dc;
+}
+
+.other .skill-circle:hover {
+  background-color: #c1f0c1;
+}
+
+/* style.css */
+
+.header-container {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.profile-img {
+  border: 5px solid #fff;
+  transition: transform 0.3s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-img-container:hover .overlay {
+  opacity: 1;
+}
+
+.profile-name {
+  text-decoration: none;
+  color: #ff9f43;
+  font-weight: bold;
+}
+
+.social-links a {
+  margin-left: 15px;
+  transition: transform 0.3s;
+}
+
+.social-links a.facebook {
+  color: #3b5998;
+}
+
+.social-links a.github {
+  color: #333;
+}
+
+.social-links a.whatsapp {
+  color: #25d366;
+}
+
+.social-links a.linkedin {
+  color: #0077b5;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.navbar {
+  display: none;
+  margin-top: 15px;
+
+}
+
+.navbar.active {
+  display: block;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 60px;
+}
+
+.navbar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar ul li a i {
+  margin-right: 10px;
+  color: #ff9f43;
+}
+
+
+.game-container {
+  width: 300px;
+  height: 400px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.shape {
+  position: absolute;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  left: 30px;
+  animation: bounce 2s infinite;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background-color: #5f43;
+  border: solid 2px #a452;
+  left: 120px;
+  animation: rotate 3s infinite linear;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid green;
+  left: 210px;
+  animation: move 4s infinite alternate;
+}
+
+.arrow2 {
+  width: 60px;
+  height: 20px;
+  background-color: rgb(246, 250, 5);
+  bottom: 80px;
+  position: absolute;
+  animation: crossHorizontal2 4s infinite linear;
+}
+
+.arrow2::after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  border-right: 20px solid rgb(246, 250, 5);
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.arrow {
+  width: 60px;
+  height: 20px;
+  background-color: purple;
+  bottom: 20px;
+  position: absolute;
+  animation: crossHorizontal 4s infinite linear;
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  border-left: 20px solid purple;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    bottom: 350px;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(450px);
+  }
+}
+
+@keyframes crossHorizontal {
+  0% {
+    left: -10px;
+  }
+
+  100% {
+    left: 200px;
+  }
+}
+
+@keyframes crossHorizontal2 {
+  0% {
+    right: 1px;
+  }
+
+  100% {
+    right: 200px;
   }
 }
