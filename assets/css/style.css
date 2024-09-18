@@ -714,8 +714,8 @@ section {
 }
 
 .skill-circle {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -934,6 +934,10 @@ section {
   border-left: 20px solid purple;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
+}
+
+.disabled {
+  display: none;
 }
 
 @keyframes bounce {
